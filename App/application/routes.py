@@ -1,5 +1,21 @@
 from application import app, db
-from application.models import Games
+from application import Customers, Items
+from flask import Flask, render_template, request
+from flask_bcrypt import bcrypt
+from models import Customers
+
+
+
+
+@app.route('/', methods=['GET','POST'])
+def home():
+    if request.form:
+        person = Customers(name=request.form.get("name"), password=bcrypt.generate_password_hash(request.form.get("password")))
+        db.session.add(person)
+        db.session.commit()
+    registrees = Customers.query.all()
+    return render_template("home.html", registrees=registrees)
+
 
 @app.route('/add')
 def add():
