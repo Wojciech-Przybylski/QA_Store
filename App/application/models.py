@@ -16,6 +16,9 @@ class Items(db.Model):
     price = db.Column(db.Float, nullable=False)
     type = db.Column(db.String(15), nullable=False)
 
+    def get_all_items(self):
+        return Items.query.all()
+    
 class Basket(db.Model):
     id = db.Column(db.Integer, nullable=False, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('customers.id'))
