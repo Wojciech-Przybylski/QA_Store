@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Shop Homepage - Flask Template</title>
+    <title>Homepage</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" />
     <!-- Bootstrap icons-->
@@ -17,12 +17,16 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="/webapp/home">Food Market</a>
+            <a class="brand-logo" href="/"><img src='static/assets//images/Untitled-1.png'></img></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/webapp/home">Shop</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/webapp/orders">Orders</a></li>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-5">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/shop">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/categories">Categories</a></li>
+
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/orders">Orders</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/about">About Us</a></li>
 
                 </ul>
                 <ul>
@@ -41,51 +45,73 @@
         </div>
     </nav>
     <!-- Header-->
-    <header class="bg-dark py-5">
+    <header class="bg-success py-1">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Organic Fruit and Veg Market</h1>
-                <p class="lead fw-normal text-white-50 mb-0">Hand Picked For You</p>
+                <h1 class="display-4 fw-bolder">Nature's Harvest Organics</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Fresh produce hand-picked For you.</p>
             </div>
         </div>
     </header>
     <!-- Section-->
-    <section class="py-5">
-        <div class="container px-4 px-lg-5 mt-5">
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                {% for item in items %}
-                <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- item image-->
-                            <img src="{{ baseUrl }}assets/images/{{item.id}}.jpg"></img>
-                            <!-- item details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- item name-->
-                                    <h5 class="fw-bolder">{{item.name}}</h5>
-                                    <!-- item price-->
-                                    
-                                    <!-- item Stock-->
-                                    <div>
-                                        <b class="fw-bolder">Available items</b>
-                                        <p class="">{{item.stock_amount}}</p>
-                                    </div>
-                                    <div>
-                                        <p>Quantity</p>
-                                        <p><input id="quantity_input_id" name="quantity_input" type="number" min="0" max='{{item.stock_amount}}'/></p>
-                                        <p><input class="btn btn-outline-dark mt-auto" name="add_item" type="submit" value="Add To Basket"></p>
+    <section class="py-1">
+            <div class="row gx-1 gx-lg-1 row-cols-1 row-cols-md-1 row-cols-xl-1 justify-content-center">
+                <!-- Section with Image Slider -->
+                <section class="py-1">
+                    <div class="Slider">
+                        <!-- Bootstrap Carousel -->
+                        <div id="imageSlider" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="{{ url_for('static', filename='assets/images/image1.jpg') }}" class="d-block w-100" alt="Slide 1">
+                                    <div class="carousel-caption">
+                                        <h3>Welcome to Our Store</h3>
+                                        <p>At Nature's Harvest Organics, we are passionate about bringing you the freshest and most delicious organic produce available. Our journey began with a simple belief that nature provides the best when it comes to nourishment. Guided by this belief, we have curated a wide selection of organic vegetables, fruits, and dairy products that are not only good for you but also good for the planet.</p>
+                                        <a href="{{ url_for('about') }}" class="btn btn-primary">Read more</a>
                                     </div>
                                 </div>
+                                <div class="carousel-item">
+                                    <img src="{{ url_for('static', filename='assets/images/image2.jpg') }}" class="d-block w-100" alt="Slide 2">
+                                    <div class="carousel-caption">
+                                        <h3>Welcome to Our Store</h3>
+                                        <p>At Nature's Harvest Organics, we are passionate about bringing you the freshest and most delicious organic produce available. Our journey began with a simple belief that nature provides the best when it comes to nourishment. Guided by this belief, we have curated a wide selection of organic vegetables, fruits, and dairy products that are not only good for you but also good for the planet.</p>
+                                        <a href="{{ url_for('about') }}" class="btn btn-primary">Read more</a>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="{{ url_for('static', filename='assets/images/image3.jpg') }}" class="d-block w-100" alt="Slide 2">
+                                    <div class="carousel-caption">
+                                        <h3>Welcome to Our Store</h3>
+                                        <p>At Nature's Harvest Organics, we are passionate about bringing you the freshest and most delicious organic produce available. Our journey began with a simple belief that nature provides the best when it comes to nourishment. Guided by this belief, we have curated a wide selection of organic vegetables, fruits, and dairy products that are not only good for you but also good for the planet.</p>
+                                        <a href="{{ url_for('about') }}" class="btn btn-primary">Read more</a>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="{{ url_for('static', filename='assets/images/image4.jpg') }}" class="d-block w-100" alt="Slide 2">
+                                    <div class="carousel-caption">
+                                        <h3>Welcome to Our Store</h3>
+                                        <p>At Nature's Harvest Organics, we are passionate about bringing you the freshest and most delicious organic produce available. Our journey began with a simple belief that nature provides the best when it comes to nourishment. Guided by this belief, we have curated a wide selection of organic vegetables, fruits, and dairy products that are not only good for you but also good for the planet.</p>
+                                        <a href="{{ url_for('about') }}" class="btn btn-primary">Read more</a>
+                                    </div>
+                                </div>
+                                <!-- Add more carousel items as needed -->
                             </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#imageSlider" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#imageSlider" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
-                    </form>
-                </div>
-                {% endfor %}
+                    </div>
+                </section>
+
             </div>
-        </div>
     </section>
     <!-- Footer-->
-    <footer class="py-5 bg-dark">
+    <footer class="py-5 bg-success">
         <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Wojciech Przybylski 2023</p></div>
     </footer>
     <!-- Bootstrap core JS-->

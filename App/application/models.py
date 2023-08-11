@@ -5,19 +5,21 @@ class Customers(db.Model):
     id = db.Column(db.Integer, nullable=False, primary_key=True)
     username = db.Column(db.String(30), nullable=False, unique=True)
     password = db.Column(db.String(30), nullable=False)
-    first_name = db.Column(db.String(30), nullable=False)
-    last_name = db.Column(db.String(30), nullable=False)
-    address = db.Column(db.String(50), nullable=False)
+    first_name = db.Column(db.String(30))
+    last_name = db.Column(db.String(30))
+    address = db.Column(db.String(50))
+    
+class Types(db.Model):
+    id = db.Column(db.Integer, nullable=False, primary_key=True)
+    type = db.Column(db.String(15), nullable=False)
     
 class Items(db.Model):
     id = db.Column(db.Integer, nullable=False, primary_key=True)
     name = db.Column(db.String(30), nullable=False, unique=True)
     stock = db.Column(db.Integer, nullable=False)
     price = db.Column(db.Float, nullable=False)
-    type = db.Column(db.String(15), nullable=False)
+    type_id = db.Column(db.String(15), db.ForeignKey('types.id'), nullable=False)
 
-    def get_all_items(self):
-        return Items.query.all()
     
 class Basket(db.Model):
     id = db.Column(db.Integer, nullable=False, primary_key=True)
