@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Vegetables</title>
+    <title>Cream</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" />
     <!-- Bootstrap icons-->
@@ -24,7 +24,6 @@
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/shop">Shop</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/categories">Categories</a></li>
-
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/orders">Orders</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/about">About Us</a></li>
 
@@ -48,8 +47,8 @@
     <header class="bg-success py-2">
         <div class="container px-4 px-lg-5 my-3">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Vegetables</h1>
-                <p class="lead fw-normal text-white-50 mb-0">Select your products</p>
+                <h1 class="display-4 fw-bolder">Cream</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Explore our products</p>
             </div>
         </div>
     </header>
@@ -58,10 +57,12 @@
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 {% for item in items %}
-                <div class="col mb-5">
+                {% if item.name == 'Cream' %}
+                <div class="col mb-5" style="translate: -26.5rem;">
                         <div class="card h-100">
                             <!-- item image-->
-                            <a class="pic" href="{{item.name}}"><img src="{{ baseUrl }}assets/images/{{item.id}}.jpg"></img></a>
+                            
+                            <a class="pic" href="/{{item.name}}"><img src="{{ baseUrl }}assets/images/{{item.id}}.jpg"></img></a>
                             <!-- item details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -80,12 +81,25 @@
                                         <p><input class="btn btn-outline-dark mt-auto" name="add_item" type="submit" value="Add To Basket"></p>
                                     </div>
                                 </div>
-                            </div>
+                            </div/div>
                         </div>
                     </form>
                 </div>
+                {% endif %}
                 {% endfor %}
             </div>
+            <div class="disc">
+                <p>Indulge in the pure luxury of organic cream – a velvety treasure that harmonizes indulgence, craftsmanship, and sustainability. Carefully curated, this dairy gem encapsulates the essence of organic production, prioritizing both your palate's pleasure and the well-being of the environment.
+
+                    Organic cream stands as a testament to the dedication and finesse inherent in organic farming. It commences with milk sourced from cows nurtured in harmony with nature – grazing on organic pastures and dwelling in environments that encourage their natural behaviors. This commitment to their welfare resonates deeply, resulting in cream of unparalleled quality.
+                    
+                    Immerse yourself in the sumptuousness of organic cream, savoring its delicate textures and nuanced flavors. Whether draped atop desserts, whipped into ethereal toppings, or incorporated into culinary creations, organic cream elevates your gastronomic journey to new heights.
+                    
+                    What distinguishes organic cream is its unwavering alliance with the Earth's vitality. Through organic farming practices, a symbiotic cycle of sustainability is nurtured – from the fields where cows graze to the final product adorning your table. This commitment results in cream that not only offers a sensorial indulgence but also a mindful connection to the environment.
+                    
+                    Whether enriching coffee, enhancing sauces, or lending elegance to dishes, organic cream blends tradition with eco-consciousness. Its quiet refinement belies its powerful impact, serving as a reminder that our culinary choices echo far beyond the plate. By selecting organic cream, you're not only embracing an exquisite experience but also aligning with a journey that prizes quality, nurtures the environment, and enriches your culinary odyssey.
+                    </p>    
+        </div>    
         </div>
     </section>
     <!-- Footer-->

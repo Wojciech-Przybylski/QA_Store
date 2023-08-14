@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Vegetables</title>
+    <title>Cheese</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" />
     <!-- Bootstrap icons-->
@@ -24,7 +24,6 @@
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/shop">Shop</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/categories">Categories</a></li>
-
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/orders">Orders</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/about">About Us</a></li>
 
@@ -48,8 +47,8 @@
     <header class="bg-success py-2">
         <div class="container px-4 px-lg-5 my-3">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Vegetables</h1>
-                <p class="lead fw-normal text-white-50 mb-0">Select your products</p>
+                <h1 class="display-4 fw-bolder">Cheese</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Explore our products</p>
             </div>
         </div>
     </header>
@@ -58,10 +57,12 @@
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 {% for item in items %}
-                <div class="col mb-5">
+                {% if item.name == 'Cheese' %}
+                <div class="col mb-5" style="translate: -26.5rem;">
                         <div class="card h-100">
                             <!-- item image-->
-                            <a class="pic" href="{{item.name}}"><img src="{{ baseUrl }}assets/images/{{item.id}}.jpg"></img></a>
+                            
+                            <a class="pic" href="/{{item.name}}"><img src="{{ baseUrl }}assets/images/{{item.id}}.jpg"></img></a>
                             <!-- item details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -80,12 +81,25 @@
                                         <p><input class="btn btn-outline-dark mt-auto" name="add_item" type="submit" value="Add To Basket"></p>
                                     </div>
                                 </div>
-                            </div>
+                            </div/div>
                         </div>
                     </form>
                 </div>
+                {% endif %}
                 {% endfor %}
             </div>
+            <div class="disc">
+                <p>Immerse yourself in the world of organic cheese – a culinary masterpiece that marries flavor, craftsmanship, and sustainability. Crafted with meticulous care, this dairy delight exemplifies the principles of organic production, prioritizing both your palate and the health of the environment.
+
+                    Organic cheese is a manifestation of the artistry and dedication that defines organic farming. It begins with milk sourced from cows raised in harmony with nature – grazing on organic pastures and living in environments that allow for their natural behaviors. This commitment to their well-being resonates in the quality of the cheese they contribute to.
+                    
+                    Indulge in the richness of organic cheese and savor its complex textures and savory notes. Each bite is a journey of taste, as the flavors unfold on your palate. Whether enjoyed on a charcuterie board, melted onto dishes, or simply savored on its own, organic cheese adds a distinctive touch to your culinary experience.
+                    
+                    What sets organic cheese apart is its allegiance to the Earth's vitality. Through organic farming practices, the cycle of sustainability is nurtured – from the soil where the cows graze to the final product on your plate. This commitment translates into a product that's not only delicious but also environmentally conscious.
+                    
+                    Whether paired with wine, added to sandwiches, or incorporated into recipes, organic cheese embodies the marriage of tradition and eco-consciousness. Its unpretentious elegance belies its significant impact, reminding us that the choices we make at the table can resonate far beyond. By choosing organic cheese, you're not only delighting in a delectable creation but also aligning with a path that celebrates quality, supports the environment, and elevates your culinary journey.
+                    </p>    
+        </div>    
         </div>
     </section>
     <!-- Footer-->

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Vegetables</title>
+    <title>Pepper</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" />
     <!-- Bootstrap icons-->
@@ -24,7 +24,6 @@
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/shop">Shop</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/categories">Categories</a></li>
-
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/orders">Orders</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/about">About Us</a></li>
 
@@ -48,8 +47,8 @@
     <header class="bg-success py-2">
         <div class="container px-4 px-lg-5 my-3">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Vegetables</h1>
-                <p class="lead fw-normal text-white-50 mb-0">Select your products</p>
+                <h1 class="display-4 fw-bolder">Pepper</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Explore our products</p>
             </div>
         </div>
     </header>
@@ -58,10 +57,12 @@
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 {% for item in items %}
-                <div class="col mb-5">
+                {% if item.name == 'Pepper' %}
+                <div class="col mb-5" style="translate: -26.5rem;">
                         <div class="card h-100">
                             <!-- item image-->
-                            <a class="pic" href="{{item.name}}"><img src="{{ baseUrl }}assets/images/{{item.id}}.jpg"></img></a>
+                            
+                            <a class="pic" href="/{{item.name}}"><img src="{{ baseUrl }}assets/images/{{item.id}}.jpg"></img></a>
                             <!-- item details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -80,12 +81,26 @@
                                         <p><input class="btn btn-outline-dark mt-auto" name="add_item" type="submit" value="Add To Basket"></p>
                                     </div>
                                 </div>
-                            </div>
+                            </div/div>
                         </div>
                     </form>
                 </div>
+                {% endif %}
                 {% endfor %}
             </div>
+            <div class="disc">
+                <p>
+                    Embark on an exciting journey through the vibrant world of organic bell peppers – nature's multicolored gems that encapsulate both well-being and ecological harmony. These peppers are nurtured with precision, grown in alignment with organic farming principles that prioritize your health and the environment's welfare.
+
+Radiating a vivid spectrum of hues, organic bell peppers showcase a range from luscious reds to sunlit yellows. Cultivated with a commitment to sustainability, they flourish without the interference of synthetic pesticides or genetic modifications. Each pepper is a testament to the earth's bounty and the meticulous care bestowed upon it.
+
+Slice into these organic treasures to reveal a captivating play of textures and flavors. Their firm, succulent walls encapsulate a treasure trove of essential nutrients, making them a perfect addition to salads, stir-fries, and snacks. With red bell peppers offering a delightful sweetness and green ones a gentle tang, every bite promises a refreshing burst of goodness.
+
+The distinctive quality of organic bell peppers extends beyond the plate, resonating with the planet's well-being. By adhering to organic practices, these peppers support soil health, water conservation, and diverse ecosystems. With each delightful bite, you partake in this sustainable journey, contributing to a healthier world for generations to come.
+
+Whether garnishing a dish, preparing stuffed delicacies, or simply savoring their natural essence, organic bell peppers celebrate the union of flavor and responsibility. Their vibrant colors and sumptuous taste serve as a reminder of the interconnectedness between agriculture and our environment. By choosing organic, you savor not only the exquisite crunch of peppers but also the satisfaction of nurturing your body and the Earth simultaneously.
+                    </p>    
+        </div>    
         </div>
     </section>
     <!-- Footer-->

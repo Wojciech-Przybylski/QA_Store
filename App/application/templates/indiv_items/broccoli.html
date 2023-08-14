@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Vegetables</title>
+    <title>Broccoli</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" />
     <!-- Bootstrap icons-->
@@ -24,7 +24,6 @@
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/shop">Shop</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/categories">Categories</a></li>
-
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/orders">Orders</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/about">About Us</a></li>
 
@@ -48,8 +47,8 @@
     <header class="bg-success py-2">
         <div class="container px-4 px-lg-5 my-3">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Vegetables</h1>
-                <p class="lead fw-normal text-white-50 mb-0">Select your products</p>
+                <h1 class="display-4 fw-bolder">Broccoli</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Explore our products</p>
             </div>
         </div>
     </header>
@@ -58,10 +57,12 @@
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 {% for item in items %}
-                <div class="col mb-5">
+                {% if item.name == 'Broccoli' %}
+                <div class="col mb-5" style="translate: -26.5rem;">
                         <div class="card h-100">
                             <!-- item image-->
-                            <a class="pic" href="{{item.name}}"><img src="{{ baseUrl }}assets/images/{{item.id}}.jpg"></img></a>
+                            
+                            <a class="pic" href="/{{item.name}}"><img src="{{ baseUrl }}assets/images/{{item.id}}.jpg"></img></a>
                             <!-- item details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -80,12 +81,26 @@
                                         <p><input class="btn btn-outline-dark mt-auto" name="add_item" type="submit" value="Add To Basket"></p>
                                     </div>
                                 </div>
-                            </div>
+                            </div/div>
                         </div>
                     </form>
                 </div>
+                {% endif %}
                 {% endfor %}
+                
             </div>
+            <div class="disc">
+                <p>Enter the world of organic broccoli – a verdant emblem of both health and sustainability. Grown with care, these cruciferous marvels embrace the principles of organic farming, prioritizing your well-being and the planet's vitality.
+
+                    Organic broccoli crowns boast a lush, inviting appearance that reflects their natural abundance. Cultivated sustainably, they eschew synthetic pesticides and harmful additives, ensuring that each floret is a testament to purity and taste.
+                    
+                    Dive into the tender, vibrant florets of organic broccoli to discover a powerhouse of nutrients and flavors. From crisp salads to hearty stir-fries, its versatility elevates a myriad of dishes. With each bite, you're treating your palate to a delightful combination of texture and earthy essence.<br>
+                    
+                    What sets organic broccoli apart is its commitment to the Earth's resilience. By embracing sustainable practices, its growth nurtures soil health, conserves water, and encourages biodiversity. Every forkful becomes a connection to these values.
+                    
+                    Whether steamed, roasted, or simply raw, organic broccoli embodies the symbiotic relationship between agriculture and our environment. Its unassuming appearance belies its significance, reminding us that simplicity can have profound impacts. By choosing organic broccoli, you're not only savoring a wholesome vegetable but also aligning with a path that nurtures your body and supports a thriving, greener world.
+                    </p>    
+        </div>    
         </div>
     </section>
     <!-- Footer-->

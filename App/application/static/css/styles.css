@@ -11359,3 +11359,20 @@ textarea.form-control-lg {
   text-decoration: none;
   white-space: nowrap;
 }
+
+.disc{
+  position: relative;
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
+  color: white;
+  margin-bottom: -31rem;
+  margin-left: 25.5rem;
+  margin-right: -3.5rem;
+  margin-top: -1rem;
+  padding-bottom: 4rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 4rem;
+  text-align: justify;
+  translate: 4rem -31rem;
+}

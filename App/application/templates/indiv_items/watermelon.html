@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Vegetables</title>
+    <title>Watermelon</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" />
     <!-- Bootstrap icons-->
@@ -24,7 +24,6 @@
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/shop">Shop</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/categories">Categories</a></li>
-
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/orders">Orders</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/about">About Us</a></li>
 
@@ -48,8 +47,8 @@
     <header class="bg-success py-2">
         <div class="container px-4 px-lg-5 my-3">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Vegetables</h1>
-                <p class="lead fw-normal text-white-50 mb-0">Select your products</p>
+                <h1 class="display-4 fw-bolder">Watermelon</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Explore our products</p>
             </div>
         </div>
     </header>
@@ -58,10 +57,12 @@
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 {% for item in items %}
-                <div class="col mb-5">
+                {% if item.name == 'Watermelon' %}
+                <div class="col mb-5" style="translate: -26.5rem;">
                         <div class="card h-100">
                             <!-- item image-->
-                            <a class="pic" href="{{item.name}}"><img src="{{ baseUrl }}assets/images/{{item.id}}.jpg"></img></a>
+                            
+                            <a class="pic" href="/{{item.name}}"><img src="{{ baseUrl }}assets/images/{{item.id}}.jpg"></img></a>
                             <!-- item details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -80,12 +81,25 @@
                                         <p><input class="btn btn-outline-dark mt-auto" name="add_item" type="submit" value="Add To Basket"></p>
                                     </div>
                                 </div>
-                            </div>
+                            </div/div>
                         </div>
                     </form>
                 </div>
+                {% endif %}
                 {% endfor %}
             </div>
+            <div class="disc">
+                <p>Dive into the refreshing world of organic watermelons – nature's juicy masterpiece that encapsulates both delight and wholesome nourishment. These succulent wonders are cultivated with care, embodying the principles of organic farming that prioritize well-being and environmental sustainability.<br>
+
+                    Organic watermelons showcase a verdant exterior, promising a sweet oasis within. Grown sustainably, they shun synthetic pesticides and harmful chemicals, ensuring that each luscious bite is a pure, guilt-free indulgence.<br>
+                    
+                    Slice open this emerald treasure to reveal a symphony of textures and flavors. The crisp, hydrating flesh carries a burst of natural sweetness, making it a perfect summer treat or a refreshing addition to salads and beverages.<br>
+                    
+                    What sets organic watermelons apart is their commitment to the Earth's vitality. Embracing sustainable practices, they champion soil health, conserve water, and promote biodiversity. Every delectable mouthful is a testament to this pledge.<br>
+                    
+                    Whether enjoyed poolside, picnicking, or gracing a festive table, organic watermelons symbolize the synergy between agriculture and our environment. Their simple, vibrant existence underscores the profound impact of mindful choices, inviting you to savor both their juicy goodness and the knowledge that your choice supports a healthier planet.
+                    </p>    
+        </div>    
         </div>
     </section>
     <!-- Footer-->

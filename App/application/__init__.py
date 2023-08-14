@@ -90,6 +90,106 @@ def create_app():
         
         return render_template("Dairy.html", baseUrl=baseUrl, items=items) 
     
+    @app.route('/Apple')
+    def apple():
+        from application import models
+    
+        items = models.Items.query.all()
+
+        baseUrl = '/static/'
+        
+        return render_template("indiv_items/apple.html", baseUrl=baseUrl, items=items) 
+    
+    @app.route('/Banana')
+    def banana():
+        from application import models
+    
+        items = models.Items.query.all()
+
+        baseUrl = '/static/'
+        
+        return render_template("indiv_items/banana.html", baseUrl=baseUrl, items=items) 
+    
+    @app.route('/Broccoli')
+    def broccoli():
+        from application import models
+    
+        items = models.Items.query.all()
+
+        baseUrl = '/static/'
+        
+        return render_template("indiv_items/broccoli.html", baseUrl=baseUrl, items=items) 
+    
+    @app.route('/Cheese')
+    def cheese():
+        from application import models
+    
+        items = models.Items.query.all()
+
+        baseUrl = '/static/'
+        
+        return render_template("indiv_items/cheese.html", baseUrl=baseUrl, items=items) 
+    
+    @app.route('/Cream')
+    def cream():
+        from application import models
+    
+        items = models.Items.query.all()
+
+        baseUrl = '/static/'
+        
+        return render_template("indiv_items/cream.html", baseUrl=baseUrl, items=items) 
+    
+    @app.route('/Garlic')
+    def garlic():
+        from application import models
+    
+        items = models.Items.query.all()
+
+        baseUrl = '/static/'
+        
+        return render_template("indiv_items/garlic.html", baseUrl=baseUrl, items=items) 
+    
+    @app.route('/Milk')
+    def milk():
+        from application import models
+    
+        items = models.Items.query.all()
+
+        baseUrl = '/static/'
+        
+        return render_template("indiv_items/milk.html", baseUrl=baseUrl, items=items) 
+    
+    @app.route('/Pepper')
+    def pepper():
+        from application import models
+    
+        items = models.Items.query.all()
+
+        baseUrl = '/static/'
+        
+        return render_template("indiv_items/pepper.html", baseUrl=baseUrl, items=items) 
+    
+    @app.route('/Tomato')
+    def tomato():
+        from application import models
+    
+        items = models.Items.query.all()
+
+        baseUrl = '/static/'
+        
+        return render_template("indiv_items/tomato.html", baseUrl=baseUrl, items=items) 
+    
+    @app.route('/Watermelon')
+    def watermelon():
+        from application import models
+    
+        items = models.Items.query.all()
+
+        baseUrl = '/static/'
+        
+        return render_template("indiv_items/watermelon.html", baseUrl=baseUrl, items=items) 
+    
     app.register_blueprint(main_bp)
 
 

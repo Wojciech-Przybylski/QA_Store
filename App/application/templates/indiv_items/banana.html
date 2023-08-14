@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Vegetables</title>
+    <title>Banana</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" />
     <!-- Bootstrap icons-->
@@ -24,7 +24,6 @@
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/shop">Shop</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/categories">Categories</a></li>
-
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/orders">Orders</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/about">About Us</a></li>
 
@@ -48,8 +47,8 @@
     <header class="bg-success py-2">
         <div class="container px-4 px-lg-5 my-3">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Vegetables</h1>
-                <p class="lead fw-normal text-white-50 mb-0">Select your products</p>
+                <h1 class="display-4 fw-bolder">Banana</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Explore our products</p>
             </div>
         </div>
     </header>
@@ -58,10 +57,12 @@
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 {% for item in items %}
-                <div class="col mb-5">
+                {% if item.name == 'Banana' %}
+                <div class="col mb-5" style="translate: -26.5rem;">
                         <div class="card h-100">
                             <!-- item image-->
-                            <a class="pic" href="{{item.name}}"><img src="{{ baseUrl }}assets/images/{{item.id}}.jpg"></img></a>
+                            
+                            <a class="pic" href="/{{item.name}}"><img src="{{ baseUrl }}assets/images/{{item.id}}.jpg"></img></a>
                             <!-- item details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -80,12 +81,25 @@
                                         <p><input class="btn btn-outline-dark mt-auto" name="add_item" type="submit" value="Add To Basket"></p>
                                     </div>
                                 </div>
-                            </div>
+                            </div/div>
                         </div>
                     </form>
                 </div>
+                {% endif %}
                 {% endfor %}
             </div>
+            <div class="disc">
+                <p>Embark on a tropical journey with organic bananas – nature's convenient and nourishing treasure. These golden delights are nurtured meticulously, adhering to organic principles that prioritize well-being and environmental harmony.<br>
+
+                    Organic bananas boast vibrant, sunlit peels that offer a sneak peek into the delectable sweetness within. Cultivated sustainably, they're devoid of synthetic pesticides and harmful chemicals, ensuring that each bite brims with purity and goodness.<br>
+                    
+                    Gently peel away to reveal a velvety, tender fruit that's as versatile as it is scrumptious. Whether relished as an on-the-go snack or blended into creamy smoothies, their innate sweetness caters to cravings while bestowing essential nutrients.<br>
+                    
+                    What truly distinguishes organic bananas is their unwavering commitment to Earth's precious resources. Anchored in sustainable farming, they bolster soil health, nurture biodiversity, and champion water conservation. With every delightful bite, you're actively supporting this eco-conscious odyssey.<br>
+                    
+                    Whether as a post-workout energy boost or a culinary masterpiece, organic bananas embody the fusion of agriculture and our planet. Their unadorned simplicity carries a profound impact, beckoning us to make mindful choices for personal well-being and a verdant, flourishing world.<br>
+                    </p>    
+        </div>    
         </div>
     </section>
     <!-- Footer-->

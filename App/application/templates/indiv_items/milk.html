@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Vegetables</title>
+    <title>Milk</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" />
     <!-- Bootstrap icons-->
@@ -24,7 +24,6 @@
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/shop">Shop</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/categories">Categories</a></li>
-
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/orders">Orders</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/about">About Us</a></li>
 
@@ -48,8 +47,8 @@
     <header class="bg-success py-2">
         <div class="container px-4 px-lg-5 my-3">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Vegetables</h1>
-                <p class="lead fw-normal text-white-50 mb-0">Select your products</p>
+                <h1 class="display-4 fw-bolder">Milk</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Explore our products</p>
             </div>
         </div>
     </header>
@@ -58,10 +57,12 @@
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 {% for item in items %}
-                <div class="col mb-5">
+                {% if item.name == 'Milk' %}
+                <div class="col mb-5" style="translate: -26.5rem;">
                         <div class="card h-100">
                             <!-- item image-->
-                            <a class="pic" href="{{item.name}}"><img src="{{ baseUrl }}assets/images/{{item.id}}.jpg"></img></a>
+                            
+                            <a class="pic" href="/{{item.name}}"><img src="{{ baseUrl }}assets/images/{{item.id}}.jpg"></img></a>
                             <!-- item details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -80,12 +81,25 @@
                                         <p><input class="btn btn-outline-dark mt-auto" name="add_item" type="submit" value="Add To Basket"></p>
                                     </div>
                                 </div>
-                            </div>
+                            </div/div>
                         </div>
                     </form>
                 </div>
+                {% endif %}
                 {% endfor %}
             </div>
+            <div class="disc">
+                <p>Indulge in the wholesome purity of organic milk – nature's nourishing elixir that encapsulates health and sustainability. Produced with utmost care, this dairy gem embodies the principles of organic farming, prioritizing your well-being and the welfare of the environment.
+
+                    Organic milk emerges as a testament to the harmony between animal welfare and sustainable practices. Cows are raised in environments that allow for natural behaviors and graze on organic pastures free from synthetic pesticides and GMOs. This commitment to their well-being resonates in the milk they produce.
+                    
+                    Pour a glass of organic milk and relish its creamy texture and refreshing taste. Each sip is a symphony of nutrients – from calcium to protein – that fortify your body. Whether enjoyed on its own, blended into smoothies, or added to cereals, organic milk is a versatile and wholesome addition to your diet.
+                    
+                    What sets organic milk apart is its allegiance to the Earth's equilibrium. By adhering to sustainable methods, organic dairy farming supports soil health, conserves water, and upholds biodiversity. With every sip, you're forging a connection to these principles.
+                    
+                    Whether used in baking, cooking, or simply sipped, organic milk embodies the interconnectedness between agriculture and our environment. Its humble simplicity belies its profound impact, reminding us that conscious choices can create a chain reaction of positive change. By choosing organic milk, you're not only savoring a nourishing beverage but also aligning with a path that prioritizes your health and contributes to a greener, more sustainable world.
+                    </p>    
+        </div>    
         </div>
     </section>
     <!-- Footer-->
