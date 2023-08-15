@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <title>Basket</title>
+    <title>Checkout</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" />    <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
@@ -39,7 +39,7 @@
 <header class="bg-dark py-5">
     <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
-            <h1 class="display-4 fw-bolder">Your Basket</h1>
+            <h1 class="display-4 fw-bolder">Checkout</h1>
         </div>
     </div>
 </header>
@@ -117,11 +117,17 @@
       </tr>
     </tfoot>
 </table>
-    <div class="row gx-10 gx-lg-4 row-cols-10 row-cols-md-8 row-cols-xl-6 justify-content-center text-center">
-      <form action="{{ url_for('checkout') }}" method="GET">
-        <button class="btn btn-outline-dark mt-auto" name="checkout" type="submit">Checkout</button>
-    </form>
+<form action="{{ url_for('place_order') }}" method="POST">
+    <div class="gx-10 gx-lg-4 row-cols-10 row-cols-md-8 row-cols-xl-6 justify-content-center text-center">
+      <p>Full Name<input title="Full Name" type="text" name="full_name"/></p>
+      <p>Email<input title="Email" type="email" name="email"/></p>
+      <p>First line of Address<input title="First line of Address" type="text" name="address1"/></p>
+      <p>Second line of Address<input title="" type="text" name="address2"/></p>
+      <p>City<input title="City" type="text" name="city"/></p>
+      <p>Post Code<input title="Post Code" type="text" name="post_code"/></p>
+      <p><input class="btn btn-outline-dark mt-auto" name="place_order" type="submit" value="Place order"></p>
     </div>
+</form>
 </body>
 <!-- Footer-->
 <footer class="py-5 bg-dark">

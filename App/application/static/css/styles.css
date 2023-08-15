@@ -878,6 +878,10 @@ progress {
   --bs-gutter-x: 1.5rem;
 }
 
+.g-4, .gx-10 {
+  margin-bottom: 1rem;
+}
+
 .g-4,
 .gy-4 {
   --bs-gutter-y: 1.5rem;
@@ -7648,6 +7652,15 @@ textarea.form-control-lg {
 .fw-bolder {
   font-weight: bolder !important;
 }
+.fw-title {
+  font-weight: bolder !important;
+}
+.fw-bolder {
+  font-weight: bolder !important;
+}
+.fw-bolder {
+  font-weight: bolder !important;
+}
 
 .lh-1 {
   line-height: 1 !important;
@@ -11375,4 +11388,12 @@ textarea.form-control-lg {
   padding-top: 4rem;
   text-align: justify;
   translate: 4rem -31rem;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 4rem;
+  font-family: Arial, sans-serif;
 }

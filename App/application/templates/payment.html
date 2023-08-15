@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <title>Basket</title>
+    <title>Payment</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" />    <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
@@ -39,7 +39,7 @@
 <header class="bg-dark py-5">
     <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
-            <h1 class="display-4 fw-bolder">Your Basket</h1>
+            <h1 class="display-4 fw-bolder">Payment</h1>
         </div>
     </div>
 </header>
@@ -91,37 +91,16 @@
     </style>
 </head>
 <body>
-<table class='table'>
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Price Per Unit</th>
-        <th>Quantity</th>
-        <th>Total Price</th>
-    </tr>
-    </thead>
-    {% for item_total in item_totals %}
-    <tbody >
-    <tr class='table-rows'>
-        <td>{{ item_total['Item_Name'] }}</td>
-        <td>{{ item_total['Price'] }}</td>
-        <td>{{ item_total['Quantity'] }}</td>
-        <td>{{ item_total['Total_Price'] }}</td>        
-    </tr>
-    </tbody>
-    {% endfor %}
-    <tfoot>
-      <tr>
-          <td colspan="3" class="total">Total</td>
-          <td>{{ basket_total }}</td>
-      </tr>
-    </tfoot>
-</table>
-    <div class="row gx-10 gx-lg-4 row-cols-10 row-cols-md-8 row-cols-xl-6 justify-content-center text-center">
-      <form action="{{ url_for('checkout') }}" method="GET">
-        <button class="btn btn-outline-dark mt-auto" name="checkout" type="submit">Checkout</button>
-    </form>
+<form action="{{ url_for('pay') }}" method="POST">
+    <div class="gx-10 gx-lg-4 row-cols-10 row-cols-md-8 row-cols-xl-6 justify-content-center text-center">
+      <input type="hidden" name="order_id" value="{{ order_id }}" />
+      <p>Full Name<input title="Full Name" type="text" name="full_name"/></p>
+      <p>card_number<input title="Card Number" type="text" name="card_number"/></p>
+      <p>expiry_date<input title="Expiry Date" type="text" name="expiry_date"/></p>
+      <p>cvv<input title="cvv" type="text" name="cvv"/></p>
+      <p><input class="btn btn-outline-dark mt-auto" name="pay" type="submit" value="Pay for order"></p>
     </div>
+</form>
 </body>
 <!-- Footer-->
 <footer class="py-5 bg-dark">
