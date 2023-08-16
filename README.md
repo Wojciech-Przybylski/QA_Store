@@ -120,4 +120,9 @@ These models collaboratively manage and store data related to items, shopping ca
 
 The templates for the Nature's Harvest Organics e-commerce website. The templates extends the `base.html` layout to make any for refactoring a lot easier.
 
+## Project Planning with Jira
+
+Throughout the development process of the Nature's Harvest Organics e-commerce web application, we utilized Jira for efficient project planning and management. Jira proved invaluable in organizing tasks, tracking progress, and ensuring timely completion of milestones. By creating user stories, assigning tasks, setting priorities, and monitoring the project's overall timeline, we were able to maintain a structured and organized development workflow. The collaborative features of Jira enabled our team to communicate effectively, address challenges, and adapt to changes seamlessly. This comprehensive approach to project planning played a pivotal role in delivering a successful and feature-rich e-commerce platform.
+
+
 
