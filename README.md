@@ -124,5 +124,10 @@ The templates for the Nature's Harvest Organics e-commerce website. The template
 
 Throughout the development process of the Nature's Harvest Organics e-commerce web application, we utilized Jira for efficient project planning and management. Jira proved invaluable in organizing tasks, tracking progress, and ensuring timely completion of milestones. By creating user stories, assigning tasks, setting priorities, and monitoring the project's overall timeline, I was able to maintain a structured and organized development workflow. This comprehensive approach to project planning played a pivotal role in delivering a successful and feature-rich e-commerce platform.
 
+## Deployment Automation with Jenkins
+
+To ensure smooth and efficient build of the Nature's Harvest Organics e-commerce web application, I used Jenkins. Jenkins served as my automation tool for building the application to cloud environment.
+
+
 
 
