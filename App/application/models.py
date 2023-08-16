@@ -1,4 +1,3 @@
-from sqlalchemy_utils import aggregated
 from application import db
 import datetime
 
