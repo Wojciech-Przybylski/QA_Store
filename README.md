@@ -28,3 +28,17 @@ The application was developed using a combination of the following technologies:
 - **Item Categories:** Users have the option to peruse items grouped by categories such as fruits, vegetables, and dairy products.
 
 - **Individual Item Pages:** Each product boasts a dedicated page brimming with comprehensive details.
+
+## The application includes the following templates for various pages:
+
+- `home.html`: Displays the homepage featuring featured items and store sections.
+- `contact_us.html`: Renders the contact page for user inquiries.
+- `about.html`: Provides information about the store and its mission.
+- `shop.html`: Displays items available for purchase and supports adding items to the cart.
+- `basket.html`: Displays the shopping cart contents and provides options for order placement.
+- `checkout.html`: Allows users to input their contact and shipping information before finalizing orders.
+- `orders.html`: Lists previous orders and their statuses.
+- `payment.html`: Simulates the payment process for order completion.
+- `categories.html`: Displays various item categories available for browsing.
+- Template Files for Individual Items: A series of templates named after specific items (e.g., `apple.html`, `banana.html`) to showcase detailed information about each item.
+
