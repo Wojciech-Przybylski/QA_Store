@@ -116,4 +116,8 @@ The `Payment` model captures payment details for orders, with fields including:
 
 These models collaboratively manage and store data related to items, shopping carts, orders, and payments, forming the core functionality of the e-commerce application.
 
+## Template
+
+The templates for the Nature's Harvest Organics e-commerce website. The templates extends the `base.html` layout to make any for refactoring a lot easier.
+
 
