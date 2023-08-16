@@ -63,7 +63,7 @@ def create_app():
         baseUrl = '/static/'
 
         item_id = request.form.get('item_id')
-        quantity = request.form.get('quantity')
+        quantity = request.form.get('quantity')        
         
         print(f'request to add {item_id}=item_id and {quantity}=quantity')
         
@@ -88,7 +88,6 @@ def create_app():
         return render_template("shop.html", items=items, baseUrl=baseUrl) 
     
     
-    
     @app.route('/basket')
     def basket():
         from application import models
@@ -100,6 +99,9 @@ def create_app():
             basket_total = basket.calculate_total_basket_price()
             item_totals = basket.calculate_total_per_basket_item()
             print(item_totals)
+        else:
+            basket_total = ""
+            item_totals = ""
               
         
         return render_template("basket.html", basket_total=basket_total, item_totals=item_totals,  baseUrl=baseUrl) 
@@ -125,6 +127,9 @@ def create_app():
         
         baseUrl = '/static/'
         
+        orders = models.Orders.query.filter_by(order_status='Open')
+
+        
         basket = models.Basket.query.filter_by(basket_status='Open').first() 
         if basket != None:
             full_name = request.form.get('full_name')
@@ -138,7 +143,7 @@ def create_app():
             print(f'request to add {full_name}=full_name and {email}=email, and {address1}=addess1, and {address2}=addess2, and {city}=city, and {post_code}=post_code')
         
             order = models.Orders(basket_id=basket.id, 
-                        total_price=basket_total, 
+                        total_price=basket_total.replace("£", ""), 
                         full_name=full_name,
                         email=email,
                         address1=address1,
@@ -150,7 +155,7 @@ def create_app():
             db.session.add(basket)
             db.session.commit()
             
-        return render_template("home.html", baseUrl=baseUrl) 
+        return render_template("orders.html", orders=orders, baseUrl=baseUrl) 
      
     @app.route('/payment_view', methods=['POST'])
     def payment_view():

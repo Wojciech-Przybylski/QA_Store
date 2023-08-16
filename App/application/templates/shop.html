@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<title>Shop</title>
+<title name='title' value="Shop">Shop</title>
     <!-- Header-->
     <header class="bg-success py-2">
         <div class="container px-4 px-lg-5 my-3">
@@ -35,7 +35,7 @@
                                     <div>
                                         <p>Quantity</p>
                                         <form action="{{ url_for('add_to_cart') }}" method="POST">
-                                            <input type="hidden" name="item_id" value="{{ item.id }}" />
+                                            <input type="hidden" name="item_id"  value="{{ item.id }}" />
                                             <input name="quantity" type="number" min="1" max="{{item.stock}}">
                                             <button class="btn btn-outline-dark mt-auto" name="add_item" type="submit">Add to Cart</button>
                                         </form>

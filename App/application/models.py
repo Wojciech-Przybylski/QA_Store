@@ -26,7 +26,7 @@ class Basket(db.Model):
         total = 0
         for basket_item in self.basket_items:
             total += basket_item.item_total
-        return total
+        return f'£{total:.2f}'
     
     def calculate_total_per_basket_item(self):
         item_list = []

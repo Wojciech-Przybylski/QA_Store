@@ -71,7 +71,7 @@
     <tr class='table-rows'>
       <td>{{ order.full_name }}</td>       
       <td>{{ order.created_time }}</td>
-      <td>£{{ order.total_price|float|round(2) }}</td>
+      <td>£{{ "%.2f" | format(order.total_price) }}</td>
       <td>
         <form action="{{ url_for('payment_view') }}" method="POST">
         <div class="gx-10 gx-lg-4 row-cols-10 row-cols-md-8 row-cols-xl-6 justify-content-center text-center">
