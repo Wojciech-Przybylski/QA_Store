@@ -1,6 +1,15 @@
 # QA_Store
 
-This repository contains a Flask-based e-commerce web application designed for an online grocery store. Users can seamlessly browse and purchase a variety of items, manage their shopping carts, and place orders. The application is developed using the Flask web framework and leverages SQLAlchemy for database management, along with Flask-Bcrypt for secure password hashing.
+This repository contains a Flask-based e-commerce web application designed for an online grocery store. Users can seamlessly browse and purchase a variety of items, manage their shopping carts, and place orders. The application is developed using the Flask web framework and leverages SQLAlchemy for database management.
+
+## Technologies Used
+
+The application was developed using a combination of the following technologies:
+
+- **HTML:** Used for structuring the content and layout of web pages.
+- **CSS:** Employed to style and enhance the visual presentation of the application.
+- **Python:** The core programming language utilized for backend logic and server-side operations.
+- **SQL:** Employed for database management and storage of essential application data.
 
 ## Features
 
