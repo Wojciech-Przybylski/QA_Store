@@ -25,6 +25,15 @@ def create_app():
         return render_template("home.html", baseUrl=baseUrl) 
     
     
+    @app.route('/contact_us')
+    def contact_us():
+        from application import models
+
+        baseUrl = '/static/'
+        
+        return render_template("contact_us.html", baseUrl=baseUrl) 
+    
+    
     @app.route('/about')
     def about():
         from application import models
@@ -182,6 +191,7 @@ def create_app():
             db.session.add(payment)
             order.order_status = 'Paid'
             db.session.add(order)
+            
             db.session.commit()
         
         return render_template("home.html", baseUrl=baseUrl)  

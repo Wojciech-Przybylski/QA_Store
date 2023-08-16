@@ -1,42 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="description" content=""/>
-    <meta name="author" content=""/>
-    <title>Payment</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" />    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
-</head>
-<body>
-<!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="/webapp/home">Food Market</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
-                class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-5">
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="/shop">Shop</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="/categories">Categories</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="/orders">Orders</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="/about">About Us</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="/basket">Basket</a></li>
-            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                <div class="text-center">
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
+{% extends 'base.html' %}
+
+{% block content %}
+<title>Payment</title>
 <!-- Header-->
-<header class="bg-dark py-5">
+<header class="bg-success py-5">
     <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
             <h1 class="display-4 fw-bolder">Payment</h1>
@@ -94,21 +61,12 @@
 <form action="{{ url_for('pay') }}" method="POST">
     <div class="gx-10 gx-lg-4 row-cols-10 row-cols-md-8 row-cols-xl-6 justify-content-center text-center">
       <input type="hidden" name="order_id" value="{{ order_id }}" />
-      <p>Full Name<input title="Full Name" type="text" name="full_name"/></p>
-      <p>card_number<input title="Card Number" type="text" name="card_number"/></p>
-      <p>expiry_date<input title="Expiry Date" type="text" name="expiry_date"/></p>
-      <p>cvv<input title="cvv" type="text" name="cvv"/></p>
-      <p><input class="btn btn-outline-dark mt-auto" name="pay" type="submit" value="Pay for order"></p>
+      <p class='payment_form'>Full Name<br><input title="Full Name" type="text" name="full_name"/></p>
+      <p class='payment_form'>card_number<br><input title="Card Number" type="text" name="card_number"/></p>
+      <p class='payment_form'>expiry_date<br><input title="Expiry Date" type="text" name="expiry_date"/></p>
+      <p class='payment_form'>cvv<br><input title="cvv" type="text" name="cvv"/></p>
+      <p class='payment_form'><br><input class="btn btn-outline-dark mt-auto" name="pay" type="submit" value="Pay for order"></p>
     </div>
 </form>
 </body>
-<!-- Footer-->
-<footer class="py-5 bg-dark">
-    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Wojciech Przybylski 2023</p></div>
-</footer>
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-</body>
-</html>
+{% endblock %}

@@ -11397,3 +11397,15 @@ textarea.form-control-lg {
   margin-bottom: 4rem;
   font-family: Arial, sans-serif;
 }
+
+.checkout_form {
+  position: relative;
+  margin-left: 43%;
+  margin-top: -1%;
+}
+
+.payment_form {
+position: relative;
+    margin-left: 41%;
+    margin-top: 1%;
+}
