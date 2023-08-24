@@ -15,7 +15,7 @@ pipeline {
             steps {
                 sh "pip install -r App/requirements.txt"
             }
-        }.0
+        }
         stage('Deploy') {
             steps {
                 sh "python3 App/app.py"
