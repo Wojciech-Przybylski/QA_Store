@@ -1,9 +1,14 @@
 pipeline {
     agent any
+    enviroment{
+        SecretKey=credentials('SecretKey')
+    }
     stages {
         stage('Build') {
             steps {
                 sh "sudo apt install -y python3-pip"
+                sh "export SecretKey=${SecretKey}"
+                sh "env"
             }
         }
         stage('Dependencies') {
